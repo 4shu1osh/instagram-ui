@@ -7,7 +7,6 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import React, {useState} from 'react';
-import LowerTab from './LowerTab';
 
 export default function Login({navigation}) {
   const [name, setName] = useState('');
@@ -19,6 +18,13 @@ export default function Login({navigation}) {
 
   function onChangeUsername(text) {
     setName(text);
+  }
+
+  function isDataFilled() {
+    if(name.length === 0 || pass.length < 6)
+      return false
+    else 
+      return true
   }
 
   return (
@@ -38,7 +44,7 @@ export default function Login({navigation}) {
         />
         <TextInput
           placeholder="Phone number, email or username"
-          placeholderTextColor={'#808080'}
+          placeholderTextColor={'#909090'}
           style={styles.input}
           onChangeText={onChangeUsername}
           autoComplete="off"
@@ -47,7 +53,7 @@ export default function Login({navigation}) {
         />
         <TextInput
           placeholder="Password"
-          placeholderTextColor={'#808080'}
+          placeholderTextColor={'#909090'}
           style={styles.input}
           secureTextEntry={true}
           onChangeText={onChangePassword}
@@ -55,18 +61,23 @@ export default function Login({navigation}) {
           autoCapitalize="none"
           autoCorrect={false}
         />
-        <TouchableOpacity onPress={() => navigation.navigate('LowerTab')}>
+        {isDataFilled() === false?
+        (<View style={[styles.button, {opacity: 0.4}]}>
+          <Text style={{color: 'white'}}>{'Log in'}</Text>
+        </View>)
+        :
+        (<TouchableOpacity onPress={() => navigation.navigate('LowerTab')}>
           <View style={styles.button}>
             <Text style={{color: 'white'}}>{'Log in'}</Text>
           </View>
-        </TouchableOpacity>
-        <Text style={{color: '#808080', fontSize: 12, marginBottom: 16}}>
+        </TouchableOpacity>)}
+        <Text style={{color: '#909090', fontSize: 12, marginBottom: 16}}>
           {'Forgot your login details? '}
           <Text style={{color: 'white'}}>{'Get help logging in.'}</Text>
         </Text>
         <View style={{flexDirection: 'row', marginBottom: 20}}>
           <View style={styles.line} />
-          <Text style={{color: '#808080'}}>{'   OR   '}</Text>
+          <Text style={{color: '#909090'}}>{'   OR   '}</Text>
           <View style={styles.line} />
         </View>
         <View style={{flexDirection: 'row'}}>
@@ -86,7 +97,7 @@ export default function Login({navigation}) {
       <View style={styles.footer} />
       <Text
         style={{
-          color: '#808080',
+          color: '#909090',
           fontSize: 12,
           marginBottom: 16,
           alignSelf: 'center',
@@ -101,13 +112,12 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 30,
-    backgroundColor: '#121212',
+    backgroundColor: 'black',
   },
   login: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    textAlignVertical: 'top',
   },
   input: {
     borderColor: 'white',
@@ -119,7 +129,7 @@ const styles = StyleSheet.create({
     color: 'white',
   },
   header: {
-    color: '#808080',
+    color: '#909090',
     textAlign: 'center',
     marginTop: 36,
   },
@@ -132,14 +142,14 @@ const styles = StyleSheet.create({
     marginBottom: 16,
   },
   line: {
-    backgroundColor: '#808080',
+    backgroundColor: '#909090',
     height: 0.2,
     width: 140,
     justifyContent: 'flex-start',
     alignSelf: 'center',
   },
   footer: {
-    backgroundColor: '#808080',
+    backgroundColor: '#909090',
     height: 0.2,
     width: 328,
     marginBottom: 14,

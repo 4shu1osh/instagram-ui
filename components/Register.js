@@ -1,55 +1,18 @@
-import {View, Text, StyleSheet, Button, TextInput} from 'react-native';
-import React, {useState} from 'react';
-import LowerTab from './LowerTab';
+import * as React from 'react';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import ChooseUsername from './ChooseUsername'
+import ChoosePassword from './ChoosePassword'
 
-export default function Register({navigation}) {
-  const [name, setName] = useState('');
-  const [pass, setPass] = useState('');
+const Stack = createNativeStackNavigator();
 
-  function onChangePassword(text) {
-    setPass(text);
-  }
-
-  function onChangeUsername(text) {
-    setName(text);
-  }
-
+export default function Register({}) {
   return (
-    <View style={styles.register}>
-      <TextInput
-        placeholder="username"
-        style={styles.input}
-        onChangeText={onChangeUsername}
-      />
-      <TextInput
-        placeholder="password"
-        style={styles.input}
-        secureTextEntry={true}
-        onChangeText={onChangePassword}
-      />
-      <TextInput
-        placeholder="re-enter password"
-        style={styles.input}
-        secureTextEntry={true}
-        onChangeText={onChangePassword}
-      />
-      <Button
-        title="Submit"
-        onPress={() => {
-          navigation.navigate('LowerTab');
-        }}
-      />
-    </View>
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}>
+      <Stack.Screen name="Username" component={ChooseUsername} />
+      <Stack.Screen name="Password" component={ChoosePassword} />
+    </Stack.Navigator>
   );
 }
-const styles = StyleSheet.create({
-  register: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    padding: 16,
-  },
-  input: {
-    borderWidtgh: 2,
-  },
-});
