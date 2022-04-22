@@ -32,14 +32,14 @@ export default function Login({navigation}) {
       <Text style={styles.header}>
         {'English(India)'}
         <Image
-          source={require('/Users/admin/Desktop/ReactNative/Instagram/assets/photos/down-arrow.png')}
+          source={require('../assets/photos/down-arrow.png')}
           style={{height: 12, width: 12}}
         />
       </Text>
 
       <View style={styles.login}>
         <Image
-          source={require('/Users/admin/Desktop/ReactNative/Instagram/assets/photos/ig.png')}
+          source={require('../assets/photos/ig.png')}
           style={{height: 50, width: 175, marginBottom: 20}}
         />
         <TextInput
@@ -66,7 +66,8 @@ export default function Login({navigation}) {
           <Text style={{color: 'white'}}>{'Log in'}</Text>
         </View>)
         :
-        (<TouchableOpacity onPress={() => navigation.navigate('LowerTab')}>
+        (<TouchableOpacity onPress={() => {navigation.navigate('LowerTab')
+        }}>
           <View style={styles.button}>
             <Text style={{color: 'white'}}>{'Log in'}</Text>
           </View>
@@ -82,7 +83,7 @@ export default function Login({navigation}) {
         </View>
         <View style={{flexDirection: 'row'}}>
           <Image
-            source={require('/Users/admin/Desktop/ReactNative/Instagram/assets/photos/fb.png')}
+            source={require('../assets/photos/fb.png')}
             style={{height: 20, width: 20}}
           />
           <Text

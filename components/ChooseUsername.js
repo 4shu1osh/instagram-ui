@@ -38,7 +38,11 @@ export default function ChooseUsername({navigation}) {
   function renderItem({item}) {
     return (
       <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-        <Text onPress={()=> setName(item)} style={{color: 'white', margin: 16}}>{item}</Text>
+        <Text
+          onPress={() => setName(item)}
+          style={{color: 'white', margin: 16}}>
+          {item}
+        </Text>
         <Image
           source={require('/Users/admin/Desktop/ReactNative/Instagram/assets/photos/tick.png')}
           style={styles.check}
@@ -60,7 +64,11 @@ export default function ChooseUsername({navigation}) {
           value={name}
           placeholder="Username"
           placeholderTextColor={'#909090'}
-          style={name.length > 3 && name.length < 6 ? [styles.input, {borderColor:'#ff5f4b', borderWidth: 1}] : styles.input}
+          style={
+            name.length > 3 && name.length < 6
+              ? [styles.input, {borderColor: '#ff5f4b', borderWidth: 1}]
+              : styles.input
+          }
           onChangeText={onChangeUsername}
           autoComplete="off"
           autoCapitalize="none"
@@ -73,10 +81,9 @@ export default function ChooseUsername({navigation}) {
           />
         ) : null}
       </View>
-      
+
       {name.length > 3 && name.length < 6 ? (
         <>
-        
           <Text
             style={{
               color: '#ff5f4b',
