@@ -20,14 +20,19 @@ export default function Reels() {
           source={require('../assets/photos/heart-empty.png')}
           style={styles.img}
         />
-        <Text style={[styles.label, {fontSize: 14}]}>{'124k'}</Text>
+        <Text style={[styles.label, {fontSize: 14, marginBottom: 4}]}>{'124k'}</Text>
+        <Image
+          source={require('../assets/photos/chat.png')}
+          style={styles.img}
+        />
+        <Text style={[styles.label, {fontSize: 14, marginBottom: 4}]}>{'1,480'}</Text>
         <Image
           source={require('../assets/photos/send.png')}
           style={styles.img}
         />
         <Image
           source={require('../assets/photos/option.png')}
-          style={{height: 20, width: 20, alignSelf: 'center'}}
+          style={{height: 20, width: 20, alignSelf: 'center', marginVertical: 8}}
         />
         <Image
           source={require('../assets/photos/user.jpg')}
@@ -97,7 +102,7 @@ const styles = StyleSheet.create({
   rightFooter: {
     right: 20,
     bottom: 50,
-    height: 200,
+    height: 260,
     justifyContent: 'center',
     position: 'absolute',
     alignSelf: 'flex-end',

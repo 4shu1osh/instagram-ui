@@ -9,7 +9,8 @@ export default function Notification({navigation}) {
         <View style={{flexDirection: 'row', alignItems: 'center'}}>
           <Image style={[styles.img, {borderRadius: 50}]} source={item.dp} />
           <Text style={styles.text}>
-            {item.username + ' liked your photo.'}
+            <Text style={{fontWeight: '600'}}>{item.username}</Text>
+            {' liked your photo.'}
           </Text>
         </View>
         <Image style={styles.img} source={item.post} />
@@ -17,32 +18,44 @@ export default function Notification({navigation}) {
     );
   };
   const ListHeaderComponent = () => {
-    return(
+    return (
       <View>
         <View style={styles.request}>
-        <Image
-          source={require('../assets/DP/9.webp')}
-          style={[styles.img, {borderRadius: 50}]}
-        />
-        <View style={{flexDirection: 'column'}}>
-          <Text style={styles.text}>{'Follow requests'}</Text>
-          <Text style={[styles.text, {color: '#909090'}]}>{'Approve or ignore requests'}</Text>
-          <View style={styles.followerCount}>
-            <Text style={{fontSize: 10, color: 'white', textAlign: 'center'}}>
-              {'1'}
+          <Image
+            source={require('../assets/DP/9.webp')}
+            style={[styles.img, {borderRadius: 50}]}
+          />
+          <View style={{flexDirection: 'column'}}>
+            <Text style={styles.text}>{'Follow requests'}</Text>
+            <Text style={[styles.text, {color: '#909090'}]}>
+              {'Approve or ignore requests'}
             </Text>
+            <View style={styles.followerCount}>
+              <Text style={{fontSize: 10, color: 'white', textAlign: 'center'}}>
+                {'1'}
+              </Text>
             </View>
+          </View>
         </View>
+        <Text
+          style={[
+            styles.heading,
+            {fontSize: 16, marginTop: 10, marginBottom: 10, fontWeight: '400'},
+          ]}>
+          {'This week'}
+        </Text>
       </View>
-      <Text style={[styles.heading, {fontSize: 16, marginTop: 10, marginBottom: 10, fontWeight: '400'}]}>{'This week'}</Text>
-      </View>
-    )
-  }
+    );
+  };
   return (
     <View style={styles.container}>
       <Text style={styles.heading}>{'Activity'}</Text>
-      
-      <FlatList data={Details} renderItem={renderItem} ListHeaderComponent={ListHeaderComponent} />
+
+      <FlatList
+        data={Details}
+        renderItem={renderItem}
+        ListHeaderComponent={ListHeaderComponent}
+      />
     </View>
   );
 }
@@ -86,6 +99,6 @@ const styles = StyleSheet.create({
     position: 'absolute',
     justifyContent: 'center',
     left: -6,
-    top:2
-  }
+    top: 2,
+  },
 });

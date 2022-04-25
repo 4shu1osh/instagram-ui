@@ -8,7 +8,6 @@ import Login from './components/Login';
 import LowerTab from './components/LowerTab';
 import TopTab from './components/TopTab';
 import { StatusBar } from 'react-native';
-import Notification from './components/Notification';
 
 
 
