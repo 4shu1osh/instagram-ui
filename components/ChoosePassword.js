@@ -4,6 +4,7 @@ import {
   StyleSheet,
   TextInput,
   TouchableOpacity,
+  SafeAreaView
 } from 'react-native';
 import React, {useState} from 'react';
 import CheckBox from '@react-native-community/checkbox';
@@ -22,6 +23,8 @@ export default function ChoosePassword({navigation}) {
     else return false;
   }
   return (
+    <SafeAreaView style={{flex:1, backgroundColor: 'black'}}>
+
     <View style={styles.container}>
       <Text style={styles.heading}>{'Choose password'}</Text>
       <Text style={styles.text}>{'For security, your password must be 6 characters or more.'}</Text>
@@ -59,12 +62,13 @@ export default function ChoosePassword({navigation}) {
           </View>
         </TouchableOpacity>)}
     </View>
+    </SafeAreaView>
   );
 }
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 30,
+    paddingHorizontal: 30,
     backgroundColor: 'black',
   },
   input: {

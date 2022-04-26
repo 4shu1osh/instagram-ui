@@ -1,8 +1,10 @@
-import {View, Image, Text, StyleSheet} from 'react-native';
+import {View, Image, Text, StyleSheet, SafeAreaView} from 'react-native';
 import React from 'react';
 
 export default function Reels() {
   return (
+    <SafeAreaView style={{flex:1, backgroundColor: 'black'}}>
+
     <View style={styles.container}>
       <Image
         source={require('../assets/photos/reel2.gif')}
@@ -69,6 +71,7 @@ export default function Reels() {
           </View>
       </View>
     </View>
+    </SafeAreaView>
   );
 }
 
@@ -76,7 +79,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: 'black',
-    paddingTop: 40,
+    // paddingTop: 40,
     alignItems: 'center',
   },
   reel: {

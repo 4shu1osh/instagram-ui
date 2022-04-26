@@ -1,4 +1,4 @@
-import {View, Text, FlatList, Image, StyleSheet} from 'react-native';
+import {SafeAreaView, FlatList, Image, StyleSheet} from 'react-native';
 import React from 'react';
 import {Details} from './Details';
 
@@ -8,7 +8,10 @@ const renderItem = ({item}) => {
 
 export default function Posts() {
   return(
+    <SafeAreaView style={{flex:1, backgroundColor: 'black'}}>
+
     <FlatList data={Details} renderItem={renderItem} numColumns={3} style={{backgroundColor: 'black'}}/>
+    </SafeAreaView>
   )
 }
 

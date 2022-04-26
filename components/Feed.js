@@ -6,7 +6,7 @@ import {
   FlatList,
   Text,
   TextInput,
-  ScrollView,
+  SafeAreaView,
 } from 'react-native';
 import React, {useState} from 'react';
 import {Details} from './Details';
@@ -221,6 +221,7 @@ export default function Feed({navigation}) {
   };
 
   return (
+    <SafeAreaView style={{flex:1, backgroundColor: 'black'}}>
     <View style={styles.container}>
       <View style={[styles.header, {justifyContent: 'space-between', marginTop: 20}]}>
         <Image
@@ -260,13 +261,14 @@ export default function Feed({navigation}) {
       {/* </ScrollView> */}
       
     </View>
+    </SafeAreaView>
   );
 }
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: 'black',
-    paddingTop: 30,
+    // paddingTop: 30,
   },
   header: {
     flexDirection: 'row',

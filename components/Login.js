@@ -7,6 +7,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import React, {useState} from 'react';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function Login({navigation}) {
   const [name, setName] = useState('');
@@ -28,6 +29,7 @@ export default function Login({navigation}) {
   }
 
   return (
+    <SafeAreaView style={{flex:1, backgroundColor: 'black'}}>
     <View style={styles.container}>
       <Text style={styles.header}>
         {'English(India)'}
@@ -40,7 +42,7 @@ export default function Login({navigation}) {
       <View style={styles.login}>
         <Image
           source={require('../assets/photos/ig.png')}
-          style={{height: 50, width: 175, marginBottom: 20}}
+          style={{height: 50, width: 175, marginBottom: 20, margin: 'auto'}}
         />
         <TextInput
           placeholder="Phone number, email or username"
@@ -78,7 +80,7 @@ export default function Login({navigation}) {
         </Text>
         <View style={{flexDirection: 'row', marginBottom: 20}}>
           <View style={styles.line} />
-          <Text style={{color: '#909090'}}>{'   OR   '}</Text>
+          <Text style={{color: '#909090', margin: 'auto'}}>{'   OR   '}</Text>
           <View style={styles.line} />
         </View>
         <View style={{flexDirection: 'row'}}>
@@ -90,6 +92,7 @@ export default function Login({navigation}) {
             style={{
               color: '#1877f2',
               alignSelf: 'center',
+              margin:'auto',
             }}>
             {'  Log in with Facebook'}
           </Text>
@@ -100,20 +103,22 @@ export default function Login({navigation}) {
         style={{
           color: '#909090',
           fontSize: 12,
-          marginBottom: 16,
           alignSelf: 'center',
+          margin: 'auto'
         }}>
         {"Don't have an account?"}
-        <Text onPress={()=> navigation.navigate('Register')} style={{color: 'white'}}>{' Sign up.'}</Text>
+        <Text onPress={()=> navigation.navigate('Register')} style={{color: 'white', marginBottom:10}}>{' Sign up.'}</Text>
       </Text>
     </View>
+    </SafeAreaView>
   );
 }
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 30,
+    paddingHorizontal: 30,
     backgroundColor: 'black',
+    marginTop: 6
   },
   login: {
     flex: 1,
@@ -132,7 +137,7 @@ const styles = StyleSheet.create({
   header: {
     color: '#909090',
     textAlign: 'center',
-    marginTop: 36,
+margin: 'auto'
   },
   button: {
     backgroundColor: '#3897f0',
@@ -144,7 +149,7 @@ const styles = StyleSheet.create({
   },
   line: {
     backgroundColor: '#909090',
-    height: 0.2,
+    height: 1,
     width: 140,
     justifyContent: 'flex-start',
     alignSelf: 'center',

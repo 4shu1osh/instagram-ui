@@ -7,6 +7,7 @@ import {
   TouchableOpacity,
   ActivityIndicator,
   FlatList,
+  SafeAreaView
 } from 'react-native';
 import React, {useState} from 'react';
 
@@ -56,6 +57,8 @@ export default function ChooseUsername({navigation}) {
   }
 
   return (
+    <SafeAreaView style={{flex:1, backgroundColor: 'black'}}>
+
     <View style={styles.container}>
       <Text style={styles.heading}>{'Choose username'}</Text>
       <Text style={styles.text}>{'You can always change it later.'}</Text>
@@ -147,12 +150,13 @@ export default function ChooseUsername({navigation}) {
         </Text>
       </Text>
     </View>
+    </SafeAreaView>
   );
 }
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 30,
+    paddingHorizontal: 30,
     backgroundColor: 'black',
   },
   input: {

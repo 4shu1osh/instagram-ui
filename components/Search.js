@@ -1,4 +1,4 @@
-import {View, Image, StyleSheet, TextInput, ScrollView} from 'react-native';
+import {View, Image, StyleSheet, TextInput, ScrollView, SafeAreaView} from 'react-native';
 import React, {useState} from 'react';
 
 export default function Search() {
@@ -9,6 +9,7 @@ export default function Search() {
   };
 
   return (
+    <SafeAreaView style={{flex:1, backgroundColor: 'black'}}>
     <View style={styles.container}>
       <ScrollView bounces={false}>
         <View style={styles.searchView}>
@@ -121,6 +122,7 @@ export default function Search() {
         </View>
       </ScrollView>
     </View>
+    </SafeAreaView>
   );
 }
 
@@ -128,8 +130,9 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: 'black',
-    paddingTop: 60,
+    // paddingTop: 60,
     alignItems: 'center',
+    marginTop:10
   },
   input: {
     width: '90%',

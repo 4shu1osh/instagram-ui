@@ -1,10 +1,11 @@
-import {View, Text, StyleSheet, FlatList, Image} from 'react-native';
+import {View, Text, StyleSheet, FlatList, Image, SafeAreaView} from 'react-native';
 import React from 'react';
 import {Details} from './Details';
 
 export default function Notification({navigation}) {
   const renderItem = ({item}) => {
     return (
+      
       <View style={styles.notification}>
         <View style={{flexDirection: 'row', alignItems: 'center'}}>
           <Image style={[styles.img, {borderRadius: 50}]} source={item.dp} />
@@ -48,6 +49,8 @@ export default function Notification({navigation}) {
     );
   };
   return (
+    <SafeAreaView style={{flex:1, backgroundColor: 'black'}}>
+
     <View style={styles.container}>
       <Text style={styles.heading}>{'Activity'}</Text>
 
@@ -57,6 +60,7 @@ export default function Notification({navigation}) {
         ListHeaderComponent={ListHeaderComponent}
       />
     </View>
+    </SafeAreaView>
   );
 }
 const styles = StyleSheet.create({
@@ -78,7 +82,7 @@ const styles = StyleSheet.create({
     color: 'white',
     fontWeight: '600',
     marginLeft: 10,
-    marginTop: 40,
+    // marginTop: 40,
   },
   request: {
     flexDirection: 'row',

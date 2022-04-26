@@ -13,6 +13,8 @@ export default function User({route, navigation}) {
   const {dp, username, following, followers, bio, posts, sampleBio, linkInBio} =
     route.params.item;
   return (
+    <SafeAreaView style={{flex:1, backgroundColor: 'black'}}>
+
       <View style={styles.container}>
 
       <View style={styles.topHeader}>
@@ -56,6 +58,7 @@ export default function User({route, navigation}) {
       <Text style={[styles.bio, {color: '#3897f0'}]}>{linkInBio}</Text>
       <TopTab/>
     </View>
+    </SafeAreaView>
     
   );
 }
@@ -64,7 +67,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: 'black',
-    paddingTop: 60,
+    // paddingTop: 60,
   },
   topHeader: {
     flexDirection: 'row',

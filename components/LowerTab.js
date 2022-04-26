@@ -19,12 +19,14 @@ const FeedStackNav = createNativeStackNavigator();
 export default function LowerTab() {
   return (
     <Tab.Navigator
+    initialRouteName='Profile'
       screenOptions={{
         headerShown: false,
         tabBarStyle: {
           backgroundColor: 'black',
         },
         tabBarShowLabel: false,
+
       }}>
       <Tab.Screen
         name="Home"

@@ -4,12 +4,13 @@ import {
   StyleSheet,
   Image,
   TouchableOpacity,
-  ScrollView,
-  Modal,
-  Pressable
+  SafeAreaView,
+  
 } from 'react-native';
 import React, {useState} from 'react';
 import TopTab from './TopTab';
+import Modal from 'react-native-modal';
+
 export default function User({navigation}) {
   const [modalVisible, setModalVisible] = useState(false);
 
@@ -23,15 +24,12 @@ export default function User({navigation}) {
   }
 
   return (
+    <SafeAreaView style={{flex:1, backgroundColor: 'black'}}>
+
     <View style={styles.container}>
       <View style={styles.topHeader}>
         <View style={styles.header}>
-          <TouchableOpacity onPress={() => navigation.goBack()}>
-            <Image
-              source={require('../assets/photos/left-arrow.png')}
-              style={{height: 30, width: 30, marginRight: 10}}
-            />
-          </TouchableOpacity>
+          
           <Text style={styles.text}>{'ashutosh_12'}</Text>
         </View>
         <View style={styles.header}>
@@ -70,13 +68,18 @@ export default function User({navigation}) {
       <Text style={[styles.bio, {color: '#3897f0'}]}>{'abc.xyz.com'}</Text>
       <TopTab />
       <Modal
+      style={styles.modalStyle}
           animationType="slide"
           transparent={true}
           visible={modalVisible}
+          swipeDirection={'down'}
+          onSwipeComplete={onPressOptions}
+          useNativeDriver={true}
+          onBackdropPress={onPressOptions}
           onRequestClose={() => {
             setModalVisible(!modalVisible);
           }}>
-          <View style={styles.centeredView}>
+          {/* <View style={styles.centeredView}>
             <View style={styles.modalView}>
               
               <Text style={styles.modalText}>Settings</Text>
@@ -91,9 +94,15 @@ export default function User({navigation}) {
                 <Text style={styles.textStyle}>Cancel</Text>
               </Pressable>
             </View>
-          </View>
+          </View> */}
+   <View style={{height:'50%', backgroundColor:'grey',justifyContent:'flex-end'}}>
+   <Text>HEllo</Text>
+          <Text>HEllo</Text>
+   </View>
+
         </Modal>
     </View>
+    </SafeAreaView>
   );
 }
 
@@ -101,7 +110,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: 'black',
-    paddingTop: 60,
+    marginTop:10
+    // paddingTop: 60,
   },
   topHeader: {
     flexDirection: 'row',
@@ -143,25 +153,26 @@ const styles = StyleSheet.create({
     marginVertical: 2,
   },
   centeredView: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginTop: 22,
+    // flex: 0.2,
+    // borderRadius: 10,
+    // marginTop: 22,
+    // width: '100%',
+    // height: '100%',
+
   },
   modalView: {
-    margin: 20,
-    backgroundColor: 'white',
-    borderRadius: 20,
-    padding: 35,
-    alignItems: 'center',
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 4,
-    elevation: 5,
+    backgroundColor: '#121212',
+    // borderRadius: 20,
+    // padding: 35,
+    // shadowColor: '#000',
+    // width: '100%',
+    // shadowOffset: {
+    //   width: 0,
+    //   height: 2,
+    // },
+    // shadowOpacity: 0.25,
+    // shadowRadius: 4,
+    // elevation: 5,
   },
   button: {
     borderRadius: 20,
@@ -181,6 +192,12 @@ const styles = StyleSheet.create({
   },
   modalText: {
     marginBottom: 15,
-    textAlign: 'center',
+    // textAlign: 'center',
   },
+  modalStyle:{
+    width:'100%',
+    alignSelf:'center',
+    justifyContent:'flex-end'
+
+  }
 });
