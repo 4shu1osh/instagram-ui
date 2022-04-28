@@ -7,8 +7,8 @@ import Register from './components/Register';
 import Login from './components/Login';
 import LowerTab from './components/LowerTab';
 import TopTab from './components/TopTab';
-import { StatusBar } from 'react-native';
-
+import {StatusBar} from 'react-native';
+import PlayReel from './components/PlayReel';
 
 
 const Stack = createNativeStackNavigator();
@@ -25,6 +25,7 @@ function App() {
         <Stack.Screen name="Register" component={Register} />
         <Stack.Screen name="LowerTab" component={LowerTab} />
         <Stack.Screen name="TopTab" component={TopTab} />
+        <Stack.Screen name="PlayReel" component={PlayReel} />
 
       </Stack.Navigator>
       <StatusBar barStyle='light-content'/>

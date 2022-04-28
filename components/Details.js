@@ -13,6 +13,8 @@ export const Details = [
         bio:'Naruto Uzumaki',
         sampleBio: 'THis is sample bio....',
         linkInBio: 'www.github.com/4shu10sh',
+        reel: 'https://assets.mixkit.co/videos/preview/mixkit-man-dancing-under-changing-lights-1240-large.mp4',
+
     },
     {
         dp: require('../assets/DP/2.jpeg'),
@@ -28,6 +30,8 @@ export const Details = [
         bio:'Son Goku',
         sampleBio: 'THis is sample bio....',
         linkInBio: 'www.github.com/4shu10sh',
+        reel: 'https://assets.mixkit.co/videos/preview/mixkit-winter-fashion-cold-looking-woman-concept-video-39874-large.mp4',
+
     },
     {
         dp: require('../assets/DP/3.png'),
@@ -43,6 +47,8 @@ export const Details = [
         bio:'L',
         sampleBio: 'THis is sample bio....',
         linkInBio: 'www.github.com/4shu10sh',
+        reel: 'https://assets.mixkit.co/videos/preview/mixkit-tree-with-yellow-flowers-1173-large.mp4',
+
     },
     {
         dp: require('../assets/DP/4.jpeg'),
@@ -58,6 +64,8 @@ export const Details = [
         bio:'Monkey D. Luffy ',
         sampleBio: 'Hello, this is sample bio....',
         linkInBio: 'www.github.com/4shu10sh',
+        reel: 'https://assets.mixkit.co/videos/preview/mixkit-pink-and-blue-ink-1192-large.mp4',
+
     },
     {
         dp: require('../assets/DP/5.jpeg'),
@@ -73,6 +81,8 @@ export const Details = [
         bio:'Princess Kaguya',
         sampleBio: 'Hello, this is sample bio....',
         linkInBio: 'www.github.com/4shu10sh',
+        reel: 'https://assets.mixkit.co/videos/preview/mixkit-mother-with-her-little-daughter-eating-a-marshmallow-in-nature-39764-large.mp4',
+
     },
     {
         dp: require('../assets/DP/6.jpeg'),
@@ -88,6 +98,8 @@ export const Details = [
         bio:'Kiki\'s Delivery Serivice',
         sampleBio: 'Hello, this is sample bio....',
         linkInBio: 'www.github.com/4shu10sh',
+        reel: 'https://assets.mixkit.co/videos/preview/mixkit-red-frog-on-a-log-1487-large.mp4',
+
     },
     {
         dp: require('../assets/DP/7.webp'),
@@ -103,6 +115,8 @@ export const Details = [
         bio:'One Punch Man',
         sampleBio: 'Hello, this is sample bio....',
         linkInBio: 'www.github.com/4shu10sh',
+        reel: 'https://assets.mixkit.co/videos/preview/mixkit-photo-session-of-a-girl-in-the-desert-34405-large.mp4',
+
     },
     {
         dp: require('../assets/DP/8.jpeg'),
@@ -118,6 +132,8 @@ export const Details = [
         bio:'Mob',
         sampleBio: 'Hello, this is sample bio....',
         linkInBio: 'www.github.com/4shu10sh',
+        reel: 'https://assets.mixkit.co/videos/preview/mixkit-man-runs-past-ground-level-shot-32809-large.mp4',
+
     },
     {
         dp: require('../assets/DP/9.webp'),
@@ -133,6 +149,8 @@ export const Details = [
         bio:'Chihiro Ogino',
         sampleBio: 'Hello, this is sample bio....',
         linkInBio: 'www.github.com/4shu10sh',
+        reel: 'https://assets.mixkit.co/videos/preview/mixkit-silhouette-of-urban-dancer-in-smoke-33898-large.mp4',
+
     },
     {
         dp: require('../assets/DP/10.jpeg'),
@@ -148,5 +166,7 @@ export const Details = [
         bio:'The Wind Rises',
         sampleBio: 'Hello, this is sample bio....',
         linkInBio: 'www.github.com/4shu10sh',
+        reel: 'https://assets.mixkit.co/videos/preview/mixkit-little-girl-opening-christmas-gifts-with-her-parents-39751-large.mp4',
+
     },
 ]

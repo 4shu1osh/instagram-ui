@@ -21,9 +21,7 @@ const renderItem = ({item}) => {
 
 export default function Tagged() {
   return(
-    <SafeAreaView style={{flex:1, backgroundColor: 'black'}}>
     <FlatList data={Details} renderItem={renderItem} numColumns={3} style={{backgroundColor: 'black'}} showsVerticalScrollIndicator={false}/>
-    </SafeAreaView>
   )
 }
 

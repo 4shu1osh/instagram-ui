@@ -24,7 +24,6 @@ export default function Feed({navigation}) {
   };
 
   const onPressText = () => {
-    console.log('scrolllllllllll');
     listViewRef.scrollToIndex({index: 0});
   };
 
@@ -256,6 +255,7 @@ export default function Feed({navigation}) {
         bounces={false}
         ref={ref => {
           listViewRef = ref;
+          console.log("ashdfhjasdasgdjhasgjdhas", listViewRef)
         }}
       />
       {/* </ScrollView> */}

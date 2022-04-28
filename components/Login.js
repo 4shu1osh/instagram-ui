@@ -141,7 +141,7 @@ margin: 'auto'
   },
   button: {
     backgroundColor: '#3897f0',
-    width: 328,
+    width: 329,
     alignItems: 'center',
     padding: 16,
     borderRadius: 6,
@@ -157,7 +157,7 @@ margin: 'auto'
   footer: {
     backgroundColor: '#909090',
     height: 0.2,
-    width: 328,
+    width: 329,
     marginBottom: 14,
   },
 });

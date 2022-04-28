@@ -30,7 +30,7 @@ export default function User({navigation}) {
       <View style={styles.topHeader}>
         <View style={styles.header}>
           
-          <Text style={styles.text}>{'ashutosh_12'}</Text>
+          <Text style={[styles.text, {fontWeight:'700', marginLeft:10}]}>{'ashutosh_12'}</Text>
         </View>
         <View style={styles.header}>
           <Image

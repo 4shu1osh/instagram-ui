@@ -4,7 +4,7 @@ import {
   StyleSheet,
   Image,
   TouchableOpacity,
-  ScrollView,
+  SafeAreaView,
 } from 'react-native';
 import React from 'react';
 import TopTab from './TopTab'
@@ -21,19 +21,19 @@ export default function User({route, navigation}) {
         <View style={styles.header}>
           <TouchableOpacity onPress={() => navigation.goBack()}>
             <Image
-              source={require('/Users/admin/Desktop/ReactNative/Instagram/assets/photos/left-arrow.png')}
-              style={{height: 30, width: 30, marginRight: 10}}
+              source={require('../assets/photos/left-arrow.png')}
+              style={{height: 30, width: 30, marginRight: 10, marginLeft:6}}
             />
           </TouchableOpacity>
           <Text style={styles.text}>{username}</Text>
         </View>
         <View style={styles.header}>
           <Image
-            source={require('/Users/admin/Desktop/ReactNative/Instagram/assets/photos/notification.png')}
+            source={require('../assets/photos/notification.png')}
             style={{height: 24, width: 24, marginLeft: 16}}
           />
           <Image
-            source={require('/Users/admin/Desktop/ReactNative/Instagram/assets/photos/option.png')}
+            source={require('../assets/photos/option.png')}
             style={{height: 20, width: 20, marginLeft: 26}}
           />
         </View>
@@ -68,6 +68,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: 'black',
     // paddingTop: 60,
+    marginTop:10
   },
   topHeader: {
     flexDirection: 'row',

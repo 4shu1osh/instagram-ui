@@ -26,8 +26,9 @@ export default function LowerTab() {
           backgroundColor: 'black',
         },
         tabBarShowLabel: false,
-
-      }}>
+        tabBarHideOnKeyboard: true
+      }}
+      >
       <Tab.Screen
         name="Home"
         component={HomeStack}
