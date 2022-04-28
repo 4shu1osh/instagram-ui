@@ -10,8 +10,7 @@ import React from 'react';
 import TopTab from './TopTab'
 
 export default function User({route, navigation}) {
-  const {dp, username, following, followers, bio, posts, sampleBio, linkInBio} =
-    route.params.item;
+  const {dp, username, following, followers, bio, posts, sampleBio, linkInBio} = route.params.item;
   return (
     <SafeAreaView style={{flex:1, backgroundColor: 'black'}}>
 

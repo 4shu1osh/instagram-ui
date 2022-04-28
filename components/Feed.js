@@ -27,6 +27,10 @@ export default function Feed({navigation}) {
     listViewRef.scrollToIndex({index: 0});
   };
 
+  const onPressStory = (item) => {
+    navigation.navigate('PlayStory', {item:item})
+  }
+
   const stories = ({item}) => {
     return (
       <View>
@@ -40,10 +44,12 @@ export default function Feed({navigation}) {
               marginLeft: 10,
               marginRight: 10,
             }}>
+            <TouchableOpacity onPress={()=>onPressStory(item)}>
             <Image
               source={item.dp}
               style={[styles.story, {height: 60, width: 60, margin: 3}]}
             />
+            </TouchableOpacity>
           </View>
           <Text
             style={{

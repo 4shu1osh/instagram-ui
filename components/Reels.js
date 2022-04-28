@@ -72,15 +72,15 @@ export default function Reels({navigation}) {
             source={require('../assets/photos/heart-empty.png')}
             style={styles.h_img}
           />
-          <Text style={[styles.label, {fontSize: 14, marginBottom: 4}]}>
-            {'124k'}
+          <Text style={[styles.label, {fontSize: 14, marginBottom: 4, alignSelf: 'center'}]}>
+            {324}
           </Text>
           <Image
             source={require('../assets/photos/chat.png')}
             style={styles.img}
           />
-          <Text style={[styles.label, {fontSize: 14, marginBottom: 4}]}>
-            {'1,480'}
+          <Text style={[styles.label, {fontSize: 14, marginBottom: 4, alignSelf: 'center'}]}>
+            {1_230}
           </Text>
           <Image
             source={require('../assets/photos/send.png')}

@@ -1,14 +1,20 @@
-import {SafeAreaView, FlatList, Image, StyleSheet} from 'react-native';
+import {SafeAreaView, FlatList, Image, StyleSheet, Touchable, TouchableOpacity} from 'react-native';
 import React from 'react';
 import {Details} from './Details';
 
-const renderItem = ({item}) => {
-  return(<Image source={item.post} style={styles.img} />);
-};
 
-export default function Posts() {
+export default function Posts({navigation}) {
+  const onPress = (item) => {
+navigation.navigate('ShowPost', {item: item})
+  }
+  const renderItem = ({item}) => {
+    return(
+      <TouchableOpacity onPress={()=>onPress(item)}>
+        <Image source={item.post} style={styles.img} />
+      </TouchableOpacity>
+    );
+  }
   return(
-
     <FlatList data={Details} renderItem={renderItem} numColumns={3} style={{backgroundColor: 'black'}}/>
   )
 }

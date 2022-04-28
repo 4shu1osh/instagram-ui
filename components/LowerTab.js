@@ -6,10 +6,12 @@ import Profile from './Profile';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
+
 import User from './User';
 import Search from './Search';
 // import Reels from './tempReels';
 import Reels from './Reels';
+import ShowPost from './ShowPost';
 
 
 
@@ -19,7 +21,7 @@ const FeedStackNav = createNativeStackNavigator();
 export default function LowerTab() {
   return (
     <Tab.Navigator
-    initialRouteName='Profile'
+    initialRouteName='Home'
       screenOptions={{
         headerShown: false,
         tabBarStyle: {
@@ -129,6 +131,7 @@ export function HomeStack() {
       }}>
       <FeedStackNav.Screen name="Feed" component={Feed} />
       <FeedStackNav.Screen name="User" component={User} />
+      <FeedStackNav.Screen name="ShowPost" component={ShowPost} />
     </FeedStackNav.Navigator>
   );
 }
