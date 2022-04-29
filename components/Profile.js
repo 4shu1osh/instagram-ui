@@ -81,38 +81,67 @@ export default function User({navigation}) {
             setModalVisible(!modalVisible);
           }}>
           <View style={styles.modalViewStyle}>
+            <TouchableOpacity onPress={()=> setModalVisible(false)}>
+              <Image 
+              source={require('../assets/photos/remove.png')}
+              style={{height: 30, width: 60, alignSelf: 'center',}}
+               />
+               </TouchableOpacity>
             <View style={styles.options}>
               <Image 
               source={require('../assets/photos/logout.png')}
-              style={{height: 20, width: 20, marginRight: 16,}}
+              style={{height: 20, width: 20, marginRight: 16, alignSelf: 'center'}}
                />
-              <Text onPress={()=> navigation.navigate('Login')} style={[styles.label, {fontSize: 16}]}>{'Sign out'}</Text>
+              <Text onPress={()=> navigation.navigate('Login')} style={[styles.label, {fontSize: 18,}]}>{'Sign out'}</Text>
             </View>
-            <View style={styles.line}/>
+            
             <View style={styles.options}>
               <Image 
-              source={require('../assets/photos/logout.png')}
-              style={{height: 20, width: 20, marginRight: 16,}}
+              source={require('../assets/photos/user.png')}
+              style={{height: 20, width: 20, marginRight: 16, alignSelf: 'center'}}
                />
-              <Text onPress={()=> navigation.navigate('Login')} style={[styles.label, {fontSize: 16}]}>{'Account'}</Text>
+              <Text onPress={()=> navigation.navigate('Login')} style={[styles.label, {fontSize: 18,}]}>{'Account'}</Text>
             </View>
-            <View style={styles.line}/>
+            
             <View style={styles.options}>
               <Image 
-              source={require('../assets/photos/logout.png')}
-              style={{height: 20, width: 20, marginRight: 16,}}
+              source={require('../assets/photos/setting.png')}
+              style={{height: 20, width: 20, marginRight: 16, alignSelf: 'center'}}
                />
-              <Text onPress={()=> navigation.navigate('Login')} style={[styles.label, {fontSize: 16}]}>{'Settings'}</Text>
+              <Text onPress={()=> navigation.navigate('Login')} style={[styles.label, {fontSize: 18,}]}>{'Settings'}</Text>
             </View>
-            <View style={styles.line}/>
+            
             <View style={styles.options}>
               <Image 
-              source={require('../assets/photos/logout.png')}
-              style={{height: 20, width: 20, marginRight: 16,}}
+              source={require('../assets/photos/archive.png')}
+              style={{height: 20, width: 20, marginRight: 16, alignSelf: 'center'}}
                />
-              <Text onPress={()=> navigation.navigate('Login')} style={[styles.label, {fontSize: 16}]}>{'Archive'}</Text>
+              <Text onPress={()=> navigation.navigate('Login')} style={[styles.label, {fontSize: 18,}]}>{'Archive'}</Text>
             </View>
-            <View style={styles.line}/>
+            
+            <View style={styles.options}>
+              <Image 
+              source={require('../assets/photos/bookmark.png')}
+              style={{height: 20, width: 20, marginRight: 16, alignSelf: 'center'}}
+               />
+              <Text onPress={()=> navigation.navigate('Login')} style={[styles.label, {fontSize: 18,}]}>{'Saved'}</Text>
+            </View>
+            
+            <View style={styles.options}>
+              <Image 
+              source={require('../assets/photos/heart-empty.png')}
+              style={{height: 20, width: 20, marginRight: 16, alignSelf: 'center'}}
+               />
+              <Text onPress={()=> navigation.navigate('Login')} style={[styles.label, {fontSize: 18,}]}>{'Your Activity'}</Text>
+            </View>
+            
+            <View style={styles.options}>
+              <Image 
+              source={require('../assets/photos/pixels.png')}
+              style={{height: 20, width: 20, marginRight: 16, alignSelf: 'center'}}
+               />
+              <Text onPress={()=> navigation.navigate('Login')} style={[styles.label, {fontSize: 18,}]}>{'Close Friends'}</Text>
+            </View>
           </View>
         </Modal>
       </View>
@@ -176,8 +205,8 @@ const styles = StyleSheet.create({
   },
   modalViewStyle: {
     height: '50%',
-    backgroundColor: '#121212',
-    paddingTop:20,
+    backgroundColor: '#202020',
+    paddingTop:14,
     borderTopLeftRadius: 30,
     borderTopRightRadius: 30,
     shadowColor: '#000',
@@ -202,4 +231,5 @@ const styles = StyleSheet.create({
     opacity: 0.2,
     alignSelf: 'center'
   },
+
 });

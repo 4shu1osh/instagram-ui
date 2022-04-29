@@ -19,9 +19,9 @@ const {width, height} = Dimensions.get('screen');
 
 export default function Reels({navigation}) {
   const [play, setPlay] = useState(false)
+  var [page, setPage] = useState(1)
   const tabHeight = useBottomTabBarHeight();
  
-  console.log("h=", height, 'w=', width);
   var playerRef = useRef();
 
   React.useEffect(() => {
@@ -38,9 +38,16 @@ export default function Reels({navigation}) {
 
   }, [navigation]);
 
+  
+  const onScrollEnd = (e) => {
 
+    // Divide the horizontal offset by the width of the view to see which page is visible
+ setPage(Math.min(Math.max(Math.floor(e.nativeEvent.contentOffset.y / height + 0.5) + 1, 0), Details.length))
+    console.log('scrolled to page ', page);
+  }
 
-  const renderItem = ({item}) => {
+  const renderItem = ({item, index}) => {
+   
     return (
       <View style={{flex: 1}}>
          <Video
@@ -54,7 +61,7 @@ export default function Reels({navigation}) {
               playerRef = ref;
             }}
             repeat={true}
-            paused={!play}
+            paused={page == index+1 ? !play : play}
             resizeMode={'cover'}
           />
          <View style={styles.header}>
@@ -148,6 +155,7 @@ export default function Reels({navigation}) {
           renderItem={renderItem}
           pagingEnabled={true}
           showsVerticalScrollIndicator={false}
+          onMomentumScrollEnd={onScrollEnd}
         />
     </SafeAreaView>
   );
