@@ -13,7 +13,7 @@ import {getStatusBarHeight} from 'react-native-status-bar-height';
 import {SafeAreaView} from 'react-native-safe-area-context';
 
 const statusBarHeight = getStatusBarHeight();
-const {width, height} = Dimensions.get('screen');
+const {width, height} = Dimensions.get('window');
 
 export default function PlayStory({route, navigation}) {
   const [play, setPlay] = useState(false);

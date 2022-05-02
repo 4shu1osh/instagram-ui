@@ -15,7 +15,7 @@ import {useBottomTabBarHeight} from '@react-navigation/bottom-tabs';
 import { getStatusBarHeight } from 'react-native-status-bar-height';
 
 const statusBarHeight = getStatusBarHeight();
-const {width, height} = Dimensions.get('screen');
+const {width, height} = Dimensions.get('window');
 
 export default function Reels({navigation}) {
   const [play, setPlay] = useState(false)
@@ -198,20 +198,20 @@ const styles = StyleSheet.create({
   },
   rightFooter: {
     right: 10,
-    bottom: 20,
+    bottom: 40,
     height: 260,
     justifyContent: 'center',
     position: 'absolute',
-    alignSelf: 'flex-end',
+    // alignSelf: 'flex-end',
     justifyContent: 'space-between',
   },
   leftFooter: {
     left: 16,
-    bottom: 20,
+    bottom: 40,
     height: 100,
     justifyContent: 'center',
     position: 'absolute',
-    alignSelf: 'flex-end',
+    // alignSelf: 'flex-end',
     justifyContent: 'space-between',
   },
   userInfo: {
