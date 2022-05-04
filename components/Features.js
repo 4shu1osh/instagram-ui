@@ -14,7 +14,7 @@ const pointers = [
 
 export default function Features({navigation}) {
   const ListHeaderComponent = () => {
-    return <Text style={styles.heading}>{'What can you do?'}</Text>;
+    return <Text style={styles.heading}>{'What you can do?'}</Text>;
   };
   const ListFooterComponent = () => {
     return (

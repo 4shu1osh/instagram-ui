@@ -13,9 +13,7 @@ import ShowPost from './components/ShowPost';
 import User from './components/Profile';
 import PlayStory from './components/PlayStory';
 import ShowVideoPost from './components/ShowVideoPost';
-
-
-
+import Features from './components/Features';
 
 const Stack = createNativeStackNavigator();
 
@@ -27,6 +25,7 @@ function App() {
         screenOptions={{
           headerShown: false,
         }}>
+        <Stack.Screen name="Features" component={Features} />
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Register" component={Register} />
         <Stack.Screen name="LowerTab" component={LowerTab} />
