@@ -1,4 +1,4 @@
-import {View, Text, StyleSheet, FlatList, Image, SafeAreaView} from 'react-native';
+import {View, Text, StyleSheet, FlatList, Image, SafeAreaView, TouchableOpacity} from 'react-native';
 import React from 'react';
 import {Details} from './Details';
 
@@ -8,7 +8,12 @@ export default function Notification({navigation}) {
       
       <View style={styles.notification}>
         <View style={{flexDirection: 'row', alignItems: 'center'}}>
+          <TouchableOpacity onPress={()=> {
+            console.log("item -----", item)
+            navigation.navigate('User', {item})}}>
+       
           <Image style={[styles.img, {borderRadius: 50}]} source={item.dp} />
+          </TouchableOpacity>
           <Text style={styles.text}>
             <Text style={{fontWeight: '600'}}>{item.username}</Text>
             {' liked your photo.'}

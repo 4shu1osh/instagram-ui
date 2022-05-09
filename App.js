@@ -10,10 +10,11 @@ import TopTab from './components/TopTab';
 import {StatusBar} from 'react-native';
 import PlayReel from './components/PlayReel';
 import ShowPost from './components/ShowPost';
-import User from './components/Profile';
+import Profile from './components/Profile';
 import PlayStory from './components/PlayStory';
 import ShowVideoPost from './components/ShowVideoPost';
 import Features from './components/Features';
+import User from './components/User';
 
 const Stack = createNativeStackNavigator();
 
@@ -32,9 +33,11 @@ function App() {
         <Stack.Screen name="TopTab" component={TopTab} />
         <Stack.Screen name="PlayReel" component={PlayReel} />
         <Stack.Screen name="ShowPost" component={ShowPost} />
-        <Stack.Screen name="User" component={User} />
+        <Stack.Screen name="Profile" component={Profile} />
         <Stack.Screen name="PlayStory" component={PlayStory} />
         <Stack.Screen name="ShowVideoPost" component={ShowVideoPost} />
+        <Stack.Screen name="User" component={User} />
+
 
       </Stack.Navigator>
       <StatusBar barStyle='light-content'/>

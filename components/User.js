@@ -11,6 +11,7 @@ import TopTab from './TopTab'
 
 export default function User({route, navigation}) {
   const {dp, username, following, followers, bio, posts, sampleBio, linkInBio} = route.params.item;
+  console.log("route ----", route)
   return (
     <SafeAreaView style={{flex:1, backgroundColor: 'black'}}>
 

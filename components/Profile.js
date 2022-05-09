@@ -10,7 +10,7 @@ import React, {useState} from 'react';
 import TopTab from './TopTab';
 import Modal from 'react-native-modal';
 
-export default function User({navigation}) {
+export default function Profile({navigation}) {
   const [modalVisible, setModalVisible] = useState(false);
 
   const onPressOptions = () => {
